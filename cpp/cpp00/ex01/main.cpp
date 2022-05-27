@@ -31,7 +31,8 @@ int main(void)
 		std::cout << "* Please enter \"EXIT\" to exit Phonebook *" << std::endl;
 		std::cout << "Enter your command: ";
 		getline(std::cin,command);
-		
+		if (std::cin.eof() == true)
+			exit(EXIT_FAILURE);
 		if (command.compare("ADD") == 0)
 		{
 			phonebook.add_contact();
@@ -41,6 +42,7 @@ int main(void)
 			phonebook.search_contact();
 		}
 	}
+	std::cout << "BYE! BYE!" << std::endl;
 	return 0;
 
 }

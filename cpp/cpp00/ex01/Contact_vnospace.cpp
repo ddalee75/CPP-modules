@@ -18,10 +18,6 @@ Contact::~Contact(void){}
 
 static std::string	format(std::string str)
 {
-	int i = 0;
-	while (str[i] == 32 || str[i] == 9)
-		i++;
-	str = str.substr(i);
 	if (str.size() > WIDTH_MAX)
 		return (str.substr(0,9) + '.');
 	else
@@ -32,11 +28,9 @@ static std::string	format(std::string str)
 static int check(std::string str)
 {
 	int i = 0;
-	while (str[i] == 32 || str[i] == 9)
-		i++;
-	while (str[i] != '\0')
-		return 1;
-	return 0;
+	if (str[i] == 32 || str[i] == 9)
+		return 0;
+	return 1;
 }
 
 
@@ -58,7 +52,7 @@ void Contact::setcontact(void)
 			exit(EXIT_FAILURE);
 		if (_firstname.empty() || (check(_firstname) == 0))
 		{
-			std::cout << "The field cannot be empty" << std::endl;
+			std::cout << "The field cannot be empty and no space at begining" << std::endl;
 			_firstname = reinit;
 		}
 	}

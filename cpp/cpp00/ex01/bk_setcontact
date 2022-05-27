@@ -1,0 +1,46 @@
+void Contact::setcontact(void){
+	std::cin.clear();
+	std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+	while (_firstname.empty())
+	{	
+		std::cout << "Enter you firstname: ";
+		getline(std::cin, _firstname);
+		if (_firstname.empty())
+				std::cout << "Please input your first name" << std::endl;
+	}
+
+	while (_lastname.empty())
+	{
+		std::cout << "Enter you lastname: " ;
+		getline(std::cin, _lastname);
+		if (_lastname.empty())
+			std::cout << "Please input your last name" << std:: endl;
+	}
+
+	while (_nickname.empty())
+	{
+		std::cout << "Enter you nickname: ";
+		getline(std::cin, _nickname);
+		if (_nickname.empty())
+			std::cout << "Please input your nickname" << std::endl;
+	}
+
+	while (_phonenumber.empty())
+	{
+		std::cout << "Enter you phone number: ";
+		getline(std::cin, _phonenumber);
+		if (_phonenumber.empty())
+			std::cout << "Please input your phonenumber" << std::endl;
+	}
+
+	while (_secret.empty())
+	{
+		std::cout << "Enter you secret:  ";
+		getline(std::cin, _secret);
+		if (_secret.empty())
+			std::cout << "Please input your darkest secret" << std::endl;
+	}
+
+	std::cout << std::endl << "*** New contact added ***" << std::endl;
+	std::cout << std::endl;
+	this->showcontact_detail();

@@ -3,34 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ljoffo <ljoffo@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/26 10:40:03 by chilee            #+#    #+#             */
-/*   Updated: 2022/05/26 18:54:47 by chilee           ###   ########.fr       */
+/*   Created: 2022/05/02 15:40:28 by ljoffo            #+#    #+#             */
+/*   Updated: 2022/05/02 15:49:16 by ljoffo           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_H
-# define PHONEBOOK_H
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
+
 #include "Contact.hpp"
-# define NB_CONTACT_MAX 8
-# define WIDTH_MAX 10
+//#include <string>
+//#include <iostream>
 
-class Phonebook{
-
+class   Phonebook
+{
 	public:
-		Phonebook(void);
-		~Phonebook(void);
-
-		Contact	get_contact(int i) const;
-		void	show_phonebook(void) const;
-		void	search_contact(void) const;
-		void	add_contact(void);
-	
-
+    	Phonebook(void);
+        ~Phonebook(void);
+		int    	set_person(int i);
+		void    show_all_contacts(int k);
+		void    show_person_detail(int i);
 	private:
-		Contact _contact[NB_CONTACT_MAX];
-		int	_nb_contacts;
-
+		Contact person[8];
 };
+
 #endif
