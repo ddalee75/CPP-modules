@@ -6,13 +6,13 @@
 /*   By: chilee <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:40:36 by chilee            #+#    #+#             */
-/*   Updated: 2022/05/26 18:42:58 by chilee           ###   ########.fr       */
+/*   Updated: 2022/05/30 15:29:58 by chilee           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Phonebook.hpp"
 
-Phonebook::Phonebook(void){}
+Phonebook::Phonebook(void): _nb_contacts(0){}
 Phonebook::~Phonebook(void){}
 
 Contact Phonebook::get_contact(int i) const
@@ -66,7 +66,7 @@ void Phonebook::search_contact(void) const
 		get_contact(i - 1).showcontact_detail();
 		std::cout << std::endl;
 		std::cout << "Type \"yes\" if you want to check another contact," << std::endl;
-		std::cout << "or touch any key to go back." << std::endl;
+		std::cout << "or touch Enter to go back." << std::endl;
 
 		std::cin.clear();
 		std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
